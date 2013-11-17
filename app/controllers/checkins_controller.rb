@@ -69,6 +69,6 @@ class CheckinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checkin_params
-      params.require(:checkin).permit(:project_github, :location_id, :checked_out_at, :message)
+      params.require(:checkin).permit(:project_github, :location_position, :message)
     end
 end
