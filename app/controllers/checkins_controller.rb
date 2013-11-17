@@ -25,10 +25,11 @@ class CheckinsController < ApplicationController
   # POST /checkins.json
   def create
     @checkin = Checkin.new(checkin_params)
+    @checkin.user = self.current_user
 
     respond_to do |format|
       if @checkin.save
-        format.html { redirect_to @checkin, notice: 'Checkin was successfully created.' }
+        format.html { redirect_to :root, notice: 'Checkin was successfully created.' }
         format.json { render action: 'show', status: :created, location: @checkin }
       else
         format.html { render action: 'new' }
@@ -54,11 +55,8 @@ class CheckinsController < ApplicationController
   # DELETE /checkins/1
   # DELETE /checkins/1.json
   def destroy
-    @checkin.destroy
-    respond_to do |format|
-      format.html { redirect_to checkins_url }
-      format.json { head :no_content }
-    end
+    self.current_checkin.touch :checked_out_at
+    redirect_to :root
   end
 
   private

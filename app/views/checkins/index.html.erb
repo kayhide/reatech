@@ -1,7 +1,11 @@
 <div class="container">
   <div class="jumbotron">
     <h1>ReaTech.</h1>
-    <%= link_to '作業を始める!', new_checkin_path , { :class => "btn btn-primary btn-lg" }  %>
+    <% if controller.is_checked_in? %>
+    <%= link_to '作業を終える!', checkin_path(controller.current_checkin), class: "btn btn-danger btn-large", method: :delete  %>
+    <% else %>
+    <%= link_to '作業を始める!', new_checkin_path, { :class => "btn btn-primary btn-large" }  %>
+    <% end %>
   </div>
 </div>
 

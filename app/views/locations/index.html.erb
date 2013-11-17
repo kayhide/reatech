@@ -1,7 +1,10 @@
 <h1>Listing locations</h1>
 
+<script type="text/javascript">
+var activeLocations = <%== Checkin.active.map{|c|c.location}.compact.to_json %>
+</script>
 
-<div style="width:800px;height:800px" class="gmap"  data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
+<div style="width:800px;height:800px" id="gmap"  data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
 
 <table>
   <thead>

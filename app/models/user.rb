@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def to_s
+    self.try(:email)
+  end
+
   def active_checkin
     self.checkins.active.first
   end
