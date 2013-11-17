@@ -13,4 +13,13 @@ class Checkin < ActiveRecord::Base
   def project_github= arg
     self.project = Project.find_or_create_by(github: arg)
   end
+
+  def location_position
+    self.location.to_s
+  end
+
+  def location_position= arg
+    latitude, longitude = arg.gsub(/\(|\)/, '').split(',').map(&:to_f)
+    self.location = Location.new(latitude: latitude, longitude: longitude)
+  end
 end
