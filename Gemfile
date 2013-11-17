@@ -20,6 +20,7 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'redcarpet'
 gem 'pry-rails'
+gem 'rest-client'
 
 group :development, :test do
   gem 'spring'
