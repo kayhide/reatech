@@ -3,12 +3,14 @@ var activeLocations = <%== Checkin.active.map{|c|c.location}.compact.to_json %>
 </script>
 
 <div class="row">
-  
+
   <div class="col-lg-10" style="height:800px" id="gmap" data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
 
-  <ul class="col-lg-2">
-    <% @users.each do |user| %>
-    <li><%= user %></li>
-    <% end %>
-  </ul>
+  <div class="col-lg-2">
+    <ul class="userList">
+      <% @users.each do |user| %>
+      <li><span class="icon icon-user"></span><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

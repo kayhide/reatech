@@ -19,6 +19,14 @@ $timeLine: ".timeLine";
 
 }
 
+.userList {
+  list-style: none;
+  padding-left: 10px;
+  .icon {
+    margin-right: 3px;
+  }
+}
+
 .jumbotron {
   background:url(/assets/jumbotron.jpg);
   h1 {
