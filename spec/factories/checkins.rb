@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :checkin do
     user nil
     location nil
-    checked_out_at "MyString"
+    checked_out_at nil
     message "MyText"
   end
 end
