@@ -6,17 +6,23 @@
   <% @checkins.each do |checkin| %>
   <div class="timeLine__row">
     <div class="row">
-      <div class="b-worker media">
-        <a class="pull-left" href="#">
-          <img src="http://placehold.jp/80x80.png" alt="">
-        </a>
-        <div class="media-body">
-          <h5 class="media-heading"><%= checkin.user %></h5>
-          <div class="worker--comment">
-            <p><%= checkin.message %></p>
+      <div class="col-lg-6">
+        <div class="b-worker media">
+          <a class="pull-left" href="#">
+            <img src="http://placehold.jp/80x80.png" alt="">
+          </a>
+          <div class="media-body">
+            <h5 class="media-heading"><%= checkin.user %></h5>
+            <div class="worker--comment">
+              <p><%= checkin.message %></p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div style="width:150px;height:150px" class="gmap" data-lat="39.286748" data-lng="141.112955"></div>
+
+
     </div>
   </div>
   <% end %>
