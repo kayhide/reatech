@@ -1,0 +1,11 @@
+$timeLine: ".timeLine";
+#{$timeLine} {
+  margin :20px 0;
+  #{$timeLine}__row {
+    background-color: #fff;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px #999;
+    padding: 20px;
+  }
+}
