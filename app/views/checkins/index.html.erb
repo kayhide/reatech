@@ -10,6 +10,7 @@
 </div>
 
 <div class="timeLine">
+  <h2>現在アクティブなプロジェクト</h2>
   <% @checkins.each do |checkin| %>
   <div class="timeLine__row">
     <div class="row">
@@ -26,11 +27,10 @@
           <div class="worker--comment arrow_box">
             <p><%= checkin.message %></p>
           </div>
-
         </div>
       </div>
 
-            <div style="width:150px;height:150px" class="gmap"  data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
+      <div style="width:150px;height:150px" class="gmap"  data-title="WEB API ハッカソン" data-lat="<%= checkin.location.latitude %>" data-lng="<%= checkin.location.longitude %>"></div>
 
     </div>
   </div>
