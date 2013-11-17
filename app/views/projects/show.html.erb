@@ -1,14 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Label:</strong>
-  <%= @project.label %>
-</p>
+<h2><%= @project.github %></h2>
 
-<p>
-  <strong>Github:</strong>
-  <%= @project.github %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p><%= link_to @project.readme['html_url'], @project.readme['html_url'] %></p>

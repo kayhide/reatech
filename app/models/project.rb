@@ -11,5 +11,9 @@ class Project < ActiveRecord::Base
   def readme
     GitHub.readme github
   end
+
+  def html_url
+    "https:github.com/#{self.github}"
+  end
 end
 
