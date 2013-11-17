@@ -7,9 +7,25 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
  *= require_tree .
+ *= require flat-ui
  */
 
 body { padding-top: 60px; }
+
+
+$timeLine: ".timeLine";
+#{$timeLine} {
+  margin :20px 0;
+  #{$timeLine}__row {
+    background-color: #fff;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px #999;
+    padding: 20px;
+  }
+}
+
+
+
