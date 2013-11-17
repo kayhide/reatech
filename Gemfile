@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'pry-rails'
 gem 'rest-client'
 gem 'devise'
+gem 'flatui-rails'
 
 group :development, :test do
   gem 'spring'

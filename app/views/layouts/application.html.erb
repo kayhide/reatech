@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -52,12 +52,15 @@
               <li><%= link_to "Users", users_path  %></li>
               <li><%= link_to "Projects",  projects_path  %></li>
               <li><%= link_to "Locations", locations_path  %></li>
+            </ul>
+            <ul class="nav pull-right">
               <% if user_signed_in? %>
-              <li><%= current_user.email %></li>
+              <li><a href=""><%= current_user.email %></a></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
               <% else %>
               <li><%= link_to "Login", new_user_session_path  %></li>
               <% end %>
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -66,21 +69,11 @@
 
     <div class="container">
         <div class="row">
-          <div class="span9">
+          <div class="span12">
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
+
         </div><!--/row-->
 
       <footer>
