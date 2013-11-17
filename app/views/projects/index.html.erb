@@ -5,6 +5,7 @@
     <tr>
       <th>Label</th>
       <th>Github</th>
+      <th>Members</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,14 @@
       <tr>
         <td><%= project.label %></td>
         <td><%= project.github %></td>
+        <td>
+          <table>
+            <% project.users.each do |user| %>
+              <thead><tr><th>email</th></tr></thead>
+              <tbody><tr><th>user.email</th></tr></tbody>
+            <% end %>
+          </table>
+        </td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

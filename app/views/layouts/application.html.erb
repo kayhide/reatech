@@ -36,9 +36,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "reatech" %>
 
   </head>
   <body>
@@ -74,5 +71,8 @@
 
     </div> <!-- /container -->
 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "reatech" %>
   </body>
 </html>
