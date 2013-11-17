@@ -1,5 +1,5 @@
 <script type="text/javascript">
-var activeLocations = <%== Checkin.active.map{|c|c.location}.compact.to_json %>
+  var activeCheckins = <%== Checkin.active.map{|c| {location: c.location, project: c.project}}.compact.to_json %>
 </script>
 
 <div class="row">

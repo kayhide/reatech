@@ -11,8 +11,12 @@ gmap = new GMaps
  lng: $gmap.attr('data-lng')
  disableDefaultUI: true
 
-for activeLocation in activeLocations
+for activeCheckin in activeCheckins
+  location = activeCheckin.location
   gmap.addMarker
-    lat: activeLocation.latitude
-    lng: activeLocation.longitude
+    lat: location.latitude
+    lng: location.longitude
+    infoWindow: {
+      content: "<p>#{activeCheckin.project.github}</p>"
+    }
 
