@@ -1,33 +1,14 @@
-<h1>Listing locations</h1>
-
 <script type="text/javascript">
 var activeLocations = <%== Checkin.active.map{|c|c.location}.compact.to_json %>
 </script>
 
-<div style="width:800px;height:800px" id="gmap"  data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
+<div class="row">
+  
+  <div class="col-lg-10" style="height:800px" id="gmap" data-title="WEB API ハッカソン" data-lat="35.657976" data-lng="139.782504"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Label</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.label %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <ul class="col-lg-2">
+    <% @users.each do |user| %>
+    <li><%= user %></li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Location', new_location_path %>
+  </ul>
+</div>

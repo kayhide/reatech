@@ -21,7 +21,7 @@
           <table>
             <% project.users.each do |user| %>
               <thead><tr><th>email</th></tr></thead>
-              <tbody><tr><th>user.email</th></tr></tbody>
+              <tbody><tr><th><%= user.email%></th></tr></tbody>
             <% end %>
           </table>
         </td>
