@@ -15,4 +15,3 @@
 //= require twitter/bootstrap
 //= require gmaps
 //= require_tree .
-
