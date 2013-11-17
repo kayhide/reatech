@@ -1,4 +1,5 @@
 Reatech::Application.routes.draw do
+  devise_for :users
   root 'checkins#index'
 
   resources :checkins

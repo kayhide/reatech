@@ -21,6 +21,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'redcarpet'
 gem 'pry-rails'
 gem 'rest-client'
+gem 'devise'
 
 group :development, :test do
   gem 'spring'

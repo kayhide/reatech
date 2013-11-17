@@ -52,6 +52,12 @@
               <li><%= link_to "Users", users_path  %></li>
               <li><%= link_to "Projects",  projects_path  %></li>
               <li><%= link_to "Locations", locations_path  %></li>
+              <% if user_signed_in? %>
+              <li><%= current_user.email %></li>
+              <li><%= link_to "Logout", destroy_user_session_path %></li>
+              <% else %>
+              <li><%= link_to "Login", new_user_session_path  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
