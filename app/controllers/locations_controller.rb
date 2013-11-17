@@ -4,7 +4,9 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations = Checkin.active.map(&:location)
+    @users = @locations.map(&:user)
+#    @users = @locations.map(&:user).uniq
   end
 
   # GET /locations/1

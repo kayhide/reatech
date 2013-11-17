@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
-  belongs_to :checkin
+  has_one :checkin
+  has_one :user, through: :checkin
 
   validates_presence_of :latitude, :longitude
 

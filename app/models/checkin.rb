@@ -20,6 +20,6 @@ class Checkin < ActiveRecord::Base
 
   def location_position= arg
     latitude, longitude = arg.gsub(/\(|\)/, '').split(',').map(&:to_f)
-    self.location = Location.new(latitude: latitude, longitude: longitude)
+    self.location = Location.create(latitude: latitude, longitude: longitude)
   end
 end
