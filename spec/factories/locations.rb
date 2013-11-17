@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :location do
-    label "MyString"
+    sequence(:label) {|i| "Location #{i}"}
   end
 end

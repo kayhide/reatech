@@ -2,9 +2,17 @@
 
 FactoryGirl.define do
   factory :checkin do
-    user nil
-    location nil
-    checked_out_at "MyString"
-    message "MyText"
+    checked_out_at nil
+    message "message"
+
+    trait :with_user do
+      user
+    end
+    trait :with_location do
+      location
+    end
+    trait :with_project do
+      project
+    end
   end
 end
