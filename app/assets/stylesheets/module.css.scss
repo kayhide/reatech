@@ -19,6 +19,14 @@ $timeLine: ".timeLine";
 
 }
 
+.jumbotron {
+  background:url(/assets/jumbotron.jpg);
+  h1 {
+    text-shadow: 1px 1px 0 #777;
+    color: #333;
+  }
+}
+
 .arrow_box {
   border-radius: 3px;
   clear: both;

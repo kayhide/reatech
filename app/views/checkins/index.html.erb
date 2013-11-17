@@ -1,6 +1,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1>ReaTech.</h1>
+    <p>Enginner Mathcing Service.</p>
     <% if controller.is_checked_in? %>
     <%= link_to '作業を終える!', checkin_path(controller.current_checkin), class: "btn btn-danger btn-large", method: :delete  %>
     <% else %>
