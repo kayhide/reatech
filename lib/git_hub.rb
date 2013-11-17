@@ -1,8 +1,6 @@
-require 'rest-client'
-
 module GitHub
   class << self
-    def site 
+    def site
       @site ||= RestClient::Resource.new('https://api.github.com')
     end
 
@@ -11,13 +9,13 @@ module GitHub
     end
 
     def repository(repository_name)
-      handle_response do 
+      handle_response do
         site["/repos/#{repository_name}"].get
       end
     end
 
     def readme(repository_name)
-      handle_response do 
+      handle_response do
         site["repos/#{repository_name}/readme"].get
       end
     end

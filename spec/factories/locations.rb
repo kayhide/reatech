@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :location do
-    label "MyString"
+    sequence(:label) {|i| "Location #{i}"}
+    latitude { rand(100) }
+    longitude { rand(100) }
   end
 end

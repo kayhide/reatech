@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :user do
-    email "MyString"
-    password "MyString"
+    email "user@reatech.herokuapp.com"
+    password "password"
   end
 end

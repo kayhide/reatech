@@ -1,9 +1,10 @@
 Reatech::Application.routes.draw do
-  devise_for :users
   root 'checkins#index'
 
-  resources :checkins
+  devise_for :users
+
+  resources :checkins, only: [:index, :new, :create, :destroy]
   resources :users
   resources :projects
-  resources :locations
+  resources :locations, only: [:index]
 end

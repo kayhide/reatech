@@ -3,6 +3,8 @@ class Checkin < ActiveRecord::Base
   belongs_to :location
   belongs_to :project
 
+  validates_associated :user, :location, :project
+
   scope :active,   ->{ where(checked_out_at:  nil) }
   scope :inactive, ->{ where.not(checked_out_at:  nil) }
 

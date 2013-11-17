@@ -1,5 +1,6 @@
 class CheckinsController < ApplicationController
   before_action :set_checkin, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
 
   # GET /checkins
   # GET /checkins.json
@@ -17,10 +18,6 @@ class CheckinsController < ApplicationController
     @checkin = Checkin.new
   end
 
-  # GET /checkins/1/edit
-  def edit
-  end
-
   # POST /checkins
   # POST /checkins.json
   def create
@@ -33,20 +30,6 @@ class CheckinsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @checkin }
       else
         format.html { render action: 'new' }
-        format.json { render json: @checkin.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /checkins/1
-  # PATCH/PUT /checkins/1.json
-  def update
-    respond_to do |format|
-      if @checkin.update(checkin_params)
-        format.html { redirect_to @checkin, notice: 'Checkin was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
         format.json { render json: @checkin.errors, status: :unprocessable_entity }
       end
     end
