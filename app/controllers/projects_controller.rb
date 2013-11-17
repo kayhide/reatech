@@ -4,7 +4,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    response_scope = Project.all.includes(:checkins).where(checkins: { checked_out_at:  nil})
+    response_scope = response_scope.includes(:users)
+    @projects = response_scope.to_a
+    #@projects = Project.all
   end
 
   # GET /projects/1
