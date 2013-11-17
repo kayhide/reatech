@@ -3,3 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+$gmap = $('#gmap')
+gmap = new GMaps
+ div: $gmap[0]
+ zoom: 12
+ lat: $gmap.attr('data-lat')
+ lng: $gmap.attr('data-lng')
+ disableDefaultUI: true
+
+for activeLocation in activeLocations
+  gmap.addMarker
+    lat: activeLocation.latitude
+    lng: activeLocation.longitude
+
