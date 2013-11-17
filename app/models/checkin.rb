@@ -3,6 +3,9 @@ class Checkin < ActiveRecord::Base
   belongs_to :location
   belongs_to :project
 
+  scope :active,   ->{ where(checked_out_at:  nil) }
+  scope :inactive, ->{ where.not(checked_out_at:  nil) }
+
   def project_github
     self.project.try(:github)
   end
