@@ -10,7 +10,7 @@
 </div>
 
 <div class="timeLine">
-  <h2>現在アクティブなプロジェクト</h2>
+  <h2 class="timeLine__title">Current Active Projects</h2>
   <% @checkins.each do |checkin| %>
   <div class="timeLine__row">
     <div class="row">
@@ -20,8 +20,8 @@
             <img src="http://placehold.jp/80x80.png" alt="">
           </a>
           <div class="media-body">
-            <h5 class="media-heading">UserName:<%= checkin.user %></h5>
-            <p>Project:</p>
+            <h5 class="media-heading">UserName: <%= checkin.user %></h5>
+            <p>Project: <%= checkin.project.github %></p>
           </div>
 
           <div class="worker--comment arrow_box">
