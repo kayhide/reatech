@@ -9,9 +9,14 @@ $timeLine: ".timeLine";
     background-color: #fff;
     border-radius: 3px;
     margin-bottom: 10px;
-    box-shadow: 0 0 2px #999;
     padding: 20px;
   }
+
+  #{$timeLine}__title {
+    margin-bottom: 20px;
+
+  }
+
 }
 
 .arrow_box {
