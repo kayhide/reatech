@@ -13,10 +13,13 @@ gmap = new GMaps
 
 for activeCheckin in activeCheckins
   location = activeCheckin.location
+  project = activeCheckin.project
+  github = activeCheckin.github
+
   gmap.addMarker
     lat: location.latitude
     lng: location.longitude
     infoWindow: {
-      content: "<p>#{activeCheckin.project.github}</p>"
+      content: "<div style='width: 200px;'><img style='width: 30px;float: left;' src='#{github.owner.avatar_url}'></img><a style='padding-left: 40px' href='#{github.html_url}'>#{project.github}</a></div>"
     }
 
