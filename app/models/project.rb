@@ -1,3 +1,5 @@
+require 'git_hub'
+
 class Project < ActiveRecord::Base
   has_many :checkins
   has_many :users, through: :checkins
@@ -8,6 +10,10 @@ class Project < ActiveRecord::Base
     rescue
       project.errors[:github] << 'repository is not reachable.'
     end
+  end
+
+  def self.with_active_users
+    joins(:users).merge(Checkin.active).load
   end
 
   def repository

@@ -10,6 +10,7 @@ describe ProjectsController do
     it "assigns all projects as @projects" do
       Project.any_instance.stub(:repository)
       project = FactoryGirl.create(:project)
+      checkin = FactoryGirl.create(:checkin, user: @user, project: project)
       get :index, {}
       assigns(:projects).should eq([project])
     end
