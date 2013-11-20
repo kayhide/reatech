@@ -59,7 +59,6 @@
         <td><%= checkin.checked_out_at %></td>
         <td><%= checkin.message %></td>
         <td><%= link_to 'Show', checkin %></td>
-        <td><%= link_to 'Edit', edit_checkin_path(checkin) %></td>
         <td><%= link_to 'Destroy', checkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
